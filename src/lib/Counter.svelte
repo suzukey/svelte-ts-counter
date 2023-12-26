@@ -17,13 +17,31 @@
   }
 </script>
 
-<div class="flex">
-  <input type="text" bind:value={title} />
-  <span>{count}</span>
-  <div>
-    <button type="button" on:click={increment}>+</button>
-    <button type="button" on:click={decrement}>-</button>
-    <button type="button" on:click={reset}>0</button>
+<div
+  class="flex items-center justify-between bg-light rounded shadow-lg px-4 py-2"
+>
+  <input type="text" class="w-1/3 text-gray-600" bind:value={title} />
+  <span class="text-lg font-bold">{count}</span>
+  <div class="flex items-center">
+    <div class="flex items-center rounded-xl text-white">
+      <button
+        type="button"
+        class="bg-red rounded-l px-3 py-1"
+        on:click={increment}>+</button
+      >
+      <button type="button" class="bg-blue px-3 py-1" on:click={decrement}
+        >-</button
+      >
+      <button
+        type="button"
+        class="bg-yellow rounded-r border-r px-3 py-1"
+        on:click={reset}>0</button
+      >
+    </div>
+    <button
+      type="button"
+      class="ml-4 text-gray"
+      on:click={() => dispatch('delete')}>x</button
+    >
   </div>
-  <button type="button" on:click={() => dispatch('delete')}>x</button>
 </div>
