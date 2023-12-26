@@ -1,6 +1,6 @@
 <script lang="ts">
 </script>
 
-<main>
-  <h1>Multiple Counter</h1>
+<main class="text-center">
+  <h1 class="text-6xl leading-relaxed">Multiple Counter</h1>
 </main>
