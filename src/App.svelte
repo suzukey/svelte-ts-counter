@@ -1,4 +1,6 @@
 <script lang="ts">
+  import Counter from './lib/Counter.svelte'
+
   interface Counter {
     title: string
     count: number
@@ -25,10 +27,11 @@
       <div>
         {#each counters as counter, idx}
           <div class="mb-2">
-            <span>{JSON.stringify(counter)}</span>
-            <button type="button" on:click={() => removeCounter(idx)}
-              >del</button
-            >
+            <Counter
+              bind:title={counter.title}
+              bind:count={counter.count}
+              on:delete={() => removeCounter(idx)}
+            />
           </div>
         {/each}
       </div>
